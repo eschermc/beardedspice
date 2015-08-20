@@ -31,9 +31,10 @@ extern BOOL accessibilityApiEnabled;
     NSUInteger  statusMenuCount;
     NSStatusItem *statusItem;
 
-    runningSBApplication *chromeApp;
-    runningSBApplication *canaryApp;
-    runningSBApplication *yandexBrowserApp;
+//    runningSBApplication *chromeApp;
+//    runningSBApplication *canaryApp;
+//    runningSBApplication *yandexBrowserApp;
+    NSMutableArray *runningSBChromeApplications;
 
     runningSBApplication *safariApp;
 

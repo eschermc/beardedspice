@@ -31,7 +31,7 @@
 
 -(NSString *) toggle
 {
-    return @"(function(){var v = flowplayer(document.querySelector('#fpdisplay')); if (v.playing) { v.play(); } else { v.pause(); }})()";
+    return @"(function(){var v = flowplayer(document.querySelector('#fpdisplay')); if (!v.playing) { v.play(); } else { v.pause(); }})()";
 }
 
 -(NSString *) previous

@@ -25,6 +25,8 @@
 
 #define APPID_SAFARI            @"com.apple.Safari"
 #define APPID_CHROME            @"com.google.Chrome"
+#define APPID_OPERA             @"com.operasoftware.Opera"
+#define APPID_CHROMIUM          @"org.chromium.Chromium"
 #define APPID_CANARY            @"com.google.Chrome.canary"
 #define APPID_YANDEX            @"ru.yandex.desktop.yandex-browser"
 
@@ -577,11 +579,25 @@ BOOL accessibilityApiEnabled = NO;
 }
 
 - (void)refreshApplications {
-
-    chromeApp = [self getRunningSBApplicationWithIdentifier:APPID_CHROME];
-    canaryApp = [self getRunningSBApplicationWithIdentifier:APPID_CANARY];
-    yandexBrowserApp =
-        [self getRunningSBApplicationWithIdentifier:APPID_YANDEX];
+    if (!runningSBChromeApplications)
+        runningSBChromeApplications = [NSMutableArray array];
+    else
+        [runningSBChromeApplications removeAllObjects];
+    runningSBApplication *app = [self getRunningSBApplicationWithIdentifier:APPID_CHROME];
+    if (app)
+        [runningSBChromeApplications addObject:app];
+    app = [self getRunningSBApplicationWithIdentifier:APPID_CANARY];
+    if (app)
+        [runningSBChromeApplications addObject:app];
+    app = [self getRunningSBApplicationWithIdentifier:APPID_YANDEX];
+    if (app)
+        [runningSBChromeApplications addObject:app];
+    app = [self getRunningSBApplicationWithIdentifier:APPID_OPERA];
+    if (app)
+        [runningSBChromeApplications addObject:app];
+    app = [self getRunningSBApplicationWithIdentifier:APPID_CHROMIUM];
+    if (app)
+        [runningSBChromeApplications addObject:app];
 
     safariApp = [self getRunningSBApplicationWithIdentifier:APPID_SAFARI];
 
@@ -620,13 +636,14 @@ BOOL accessibilityApiEnabled = NO;
 - (void)setActiveTabShortcut{
     
     [self refreshApplications];
-    if (chromeApp.frontmost) {
-        [self setActiveTabShortcutForChrome:chromeApp];
-    } else if (canaryApp.frontmost) {
-        [self setActiveTabShortcutForChrome:canaryApp];
-    } else if (yandexBrowserApp.frontmost) {
-        [self setActiveTabShortcutForChrome:yandexBrowserApp];
-    } else if (safariApp.frontmost) {
+    BOOL front = false;
+    for (runningSBApplication *app in runningSBChromeApplications) {
+        if ((front = app.frontmost)) {
+            [self setActiveTabShortcutForChrome:app];
+            break;
+        }
+    }
+    if (!front && safariApp.frontmost) {
         [self setActiveTabShortcutForSafari:safariApp];
     } else {
 
@@ -738,9 +755,9 @@ BOOL accessibilityApiEnabled = NO;
 
     [mediaStrategyRegistry beginStrategyQueries];
     
-    [self refreshTabsForChrome:chromeApp];
-    [self refreshTabsForChrome:canaryApp];
-    [self refreshTabsForChrome:yandexBrowserApp];
+    for (runningSBApplication *app in runningSBChromeApplications) {
+        [self refreshTabsForChrome:app];
+    }
     [self refreshTabsForSafari:safariApp];
     
     for (runningSBApplication *app in nativeApps) {
