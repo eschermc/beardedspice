@@ -1,4 +1,4 @@
- //
+//
 //  AppDelegate.h
 //  BeardedSpice
 //
@@ -60,6 +60,8 @@ extern BOOL accessibilityApiEnabled;
     NSArray *mikeys;
     BSHeadphoneUnplugListener *_hpuListener;
 }
+
+@property id eventMonitor;
 
 @property (nonatomic, readonly) NSWindowController *preferencesWindowController;
 

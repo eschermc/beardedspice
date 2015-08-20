@@ -98,6 +98,7 @@
 		B500FC3818D33F2E00FEFD74 /* YandexMusicStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = B500FC3718D33F2E00FEFD74 /* YandexMusicStrategy.m */; };
 		BE0EC59E41539EF7C9368E11 /* YandexRadioStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0EC7F56FEF36DE52081CE1 /* YandexRadioStrategy.m */; };
 		BE36E0661A6797B300713BA7 /* FocusAtWillStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE36E0651A6797B300713BA7 /* FocusAtWillStrategy.m */; };
+		BF188F2C1B8616F8009AF7A2 /* MediaKey.m in Sources */ = {isa = PBXBuildFile; fileRef = BF188F2B1B8616F8009AF7A2 /* MediaKey.m */; };
 		BF8512B61B84CF82005421A1 /* TvArsiviStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8512B51B84CF82005421A1 /* TvArsiviStrategy.m */; };
 		C31C94181AFB5500003F89AC /* NoonPacificStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C94171AFB5500003F89AC /* NoonPacificStrategy.m */; };
 		CA5CCF421887FC0700F7C1C3 /* SynologyStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5CCF411887FC0700F7C1C3 /* SynologyStrategy.m */; };
@@ -306,6 +307,8 @@
 		BE0EC8CE1C97A9D6264D11A4 /* YandexRadioStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YandexRadioStrategy.h; sourceTree = "<group>"; };
 		BE36E0651A6797B300713BA7 /* FocusAtWillStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FocusAtWillStrategy.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		BE36E0671A6797DA00713BA7 /* FocusAtWillStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FocusAtWillStrategy.h; sourceTree = "<group>"; };
+		BF188F2A1B8616DB009AF7A2 /* MediaKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaKey.h; path = ../MediaKey.h; sourceTree = "<group>"; };
+		BF188F2B1B8616F8009AF7A2 /* MediaKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaKey.m; sourceTree = "<group>"; };
 		BF8512B41B84CF82005421A1 /* TvArsiviStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TvArsiviStrategy.h; sourceTree = "<group>"; };
 		BF8512B51B84CF82005421A1 /* TvArsiviStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TvArsiviStrategy.m; sourceTree = "<group>"; };
 		C31C94161AFB54B4003F89AC /* NoonPacificStrategy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoonPacificStrategy.h; sourceTree = "<group>"; };
@@ -565,6 +568,8 @@
 		967933351855173100A49AC7 /* BeardedSpice */ = {
 			isa = PBXGroup;
 			children = (
+				BF188F2A1B8616DB009AF7A2 /* MediaKey.h */,
+				BF188F2B1B8616F8009AF7A2 /* MediaKey.m */,
 				0369231B1862934000E04DDB /* Preferences */,
 				03F33EE31857E21100E8F77E /* Tabs */,
 				03A34919185E9FC700C4A62B /* MediaStrategies */,
@@ -779,6 +784,7 @@
 				699AAD3F1992C0BE0021BFF2 /* OvercastStrategy.m in Sources */,
 				65E567061B75FD6E00AD2D46 /* BSHeadphoneUnplugListener.m in Sources */,
 				95124C641AD0ECB5001B1F3D /* DigitallyImportedStrategy.m in Sources */,
+				BF188F2C1B8616F8009AF7A2 /* MediaKey.m in Sources */,
 				B500FC3818D33F2E00FEFD74 /* YandexMusicStrategy.m in Sources */,
 				65E567111B76AE3A00AD2D46 /* BSPreferencesWindowController.m in Sources */,
 				1AAB7F031A3AACE900EC9E2D /* AudioMackStrategy.m in Sources */,
