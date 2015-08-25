@@ -36,13 +36,13 @@
 
 -(NSString *) previous
 {
-    return @"(function(){data = $('#kanal_geri').attr('rel'); $.getJSON('index.php?s=ajax&b=kanal_ileri_geri', {data: data}, function (json) { flowplayer($('#fpdisplay')[0]).load(json.vurl); $('#kanal_ileri').attr('rel',json.s); $('#kanal_geri').attr('rel',json.o); $('#tarih_saat_span').text(json.part_tarih_saat); });})()";
+    return @"(function(){data = $('#icerik_ileri').attr('rel'); $.getJSON('index.php?s=ajax&b=kanal_ileri_geri', {data: data}, function (json) { flowplayer($('#fpdisplay')[0]).load(json.vurl); $('#icerik_ileri').attr('rel',json.s); $('#icerik_geri').attr('rel',json.o); $('#tarih_saat_span').text(json.part_tarih_saat); });})()";
 }
 
 -(NSString *) next
 {
-    return @"(function(){data = $('#kanal_ileri').attr('rel'); $.getJSON('index.php?s=ajax&b=kanal_ileri_geri', {data: data}, function (json) { flowplayer($('#fpdisplay')[0]).load(json.vurl); $('#kanal_ileri').attr('rel',json.s); $('#kanal_geri').attr('rel',json.o); $('#tarih_saat_span').text(json.part_tarih_saat); });})()";
-    // return @"(function(){return document.querySelector('#kanal_ileri').click()})()";
+    return @"(function(){data = $('#icerik_ileri').attr('rel'); $.getJSON('index.php?s=ajax&b=kanal_ileri_geri', {data: data}, function (json) { flowplayer($('#fpdisplay')[0]).load(json.vurl); $('#icerik_ileri').attr('rel',json.s); $('#icerik_geri').attr('rel',json.o); $('#tarih_saat_span').text(json.part_tarih_saat); });})()";
+    // return @"(function(){return document.querySelector('#icerik_ileri').click()})()";
 }
 
 -(NSString *) pause
