@@ -27,6 +27,7 @@ extern BOOL accessibilityApiEnabled;
 #import "MediaStrategy.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate, BSHeadphoneUnplugListenerProtocol> {
+
     IBOutlet NSMenu *statusMenu;
     NSUInteger  statusMenuCount;
     NSStatusItem *statusItem;
@@ -37,9 +38,9 @@ extern BOOL accessibilityApiEnabled;
     NSMutableArray *runningSBChromeApplications;
 
     runningSBApplication *safariApp;
+    NSMutableSet *SafariTabKeys;
 
     NSMutableArray *nativeApps;
-    runningSBApplication *iTunesApp;
 
     SPMediaKeyTap *keyTap;
 
@@ -58,6 +59,7 @@ extern BOOL accessibilityApiEnabled;
     dispatch_queue_t notificationQueue;
     
     NSArray *mikeys;
+    NSArray *_appleRemotes;
     BSHeadphoneUnplugListener *_hpuListener;
 }
 
