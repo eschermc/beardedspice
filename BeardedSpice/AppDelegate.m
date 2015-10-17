@@ -22,6 +22,7 @@
 
 #import "runningSBApplication.h"
 
+#import "MediaKey.h"
 #import "BSHidAppleRemote.h"
 
 #define APPID_SAFARI            @"com.apple.Safari"
