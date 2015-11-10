@@ -61,6 +61,8 @@
 #import "TvArsiviStrategy.h"
 #import "PlexWebStrategy.h"
 #import "NRKStrategy.h"
+#import "UdemyStrategy.h"
+#import "JangoMediaStrategy.h"
 
 @interface MediaStrategyRegistry ()
 @property (nonatomic, strong) NSMutableDictionary *registeredCache;
@@ -222,7 +224,10 @@
                         [PlexWebStrategy new],
                         [ComposedStrategy new],
                         [TvArsiviStrategy new],
+                        [NRKStrategy new],
+                        [UdemyStrategy new],
                         [NRKStrategy new]
+                        [JangoMediaStrategy new]
                     ];
     });
     return strategies;
