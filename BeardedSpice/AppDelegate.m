@@ -259,10 +259,10 @@ BOOL accessibilityApiEnabled = NO;
                 [self playerPrevious];
                 break;
             case kHIDUsage_GD_SystemMenuUp:
-                [self pressKey:NX_KEYTYPE_SOUND_UP];
+//                [self pressKey:NX_KEYTYPE_SOUND_UP];
                 break;
             case kHIDUsage_GD_SystemMenuDown:
-                [self pressKey:NX_KEYTYPE_SOUND_DOWN];
+//                [self pressKey:NX_KEYTYPE_SOUND_DOWN];
                 break;
             default:
                 NSLog(@"Unknown key press seen %d", usageId);
@@ -537,7 +537,7 @@ BOOL accessibilityApiEnabled = NO;
 
         MediaStrategy *strategy =
             [mediaStrategyRegistry getMediaStrategyForTab:activeTab];
-        if (strategy) {
+        if (strategy && ![NSString isNullOrEmpty:[strategy toggle]]) {
             [activeTab executeJavascript:[strategy toggle]];
             if (ALWAYSSHOWNOTIFICATION && ![activeTab frontmost]) {
                 [self showNotification];
@@ -568,7 +568,7 @@ BOOL accessibilityApiEnabled = NO;
 
         MediaStrategy *strategy =
             [mediaStrategyRegistry getMediaStrategyForTab:activeTab];
-        if (strategy) {
+        if (strategy && ![NSString isNullOrEmpty:[strategy next]]) {
             [activeTab executeJavascript:[strategy next]];
             dispatch_after(
                 dispatch_time(DISPATCH_TIME_NOW,
@@ -605,7 +605,7 @@ BOOL accessibilityApiEnabled = NO;
 
         MediaStrategy *strategy =
             [mediaStrategyRegistry getMediaStrategyForTab:activeTab];
-        if (strategy) {
+        if (strategy && ![NSString isNullOrEmpty:[strategy previous]]) {
             [activeTab executeJavascript:[strategy previous]];
             dispatch_after(
                 dispatch_time(DISPATCH_TIME_NOW,
@@ -733,6 +733,12 @@ BOOL accessibilityApiEnabled = NO;
     if (app)
         [runningSBChromeApplications addObject:app];
 
+    chromeApp = [self getRunningSBApplicationWithIdentifier:APPID_CHROME];
+    canaryApp = [self getRunningSBApplicationWithIdentifier:APPID_CANARY];
+    yandexBrowserApp =
+        [self getRunningSBApplicationWithIdentifier:APPID_YANDEX];
+    chromiumApp = [self getRunningSBApplicationWithIdentifier:APPID_CHROMIUM];
+    
     safariApp = [self getRunningSBApplicationWithIdentifier:APPID_SAFARI];
 
     [nativeApps removeAllObjects];
