@@ -30,6 +30,8 @@
 		<true/>
 		<key>Bop.fm</key>
 		<true/>
+                <key>BugsMusic</key>
+		<true/>
 		<key>Chorus</key>
 		<true/>
 		<key>Deezer</key>
@@ -80,8 +82,6 @@
 		<true/>
 		<key>SomaFM</key>
 		<true/>
-		<key>Songza</key>
-		<true/>
 		<key>SoundCloud</key>
 		<true/>
 		<key>Spotify</key>
@@ -91,6 +91,8 @@
 		<key>Synology Audio Station</key>
 		<true/>
 		<key>TIDAL</key>
+		<true/>
+		<key>Vessel</key>
 		<true/>
 		<key>VK</key>
 		<true/>
@@ -110,6 +112,8 @@
 		<true/>
 		<key>TvArsivi</key>
 		<key>Udemy</key>
+		<true/>
+		<key>twitch.tv</key>
 		<true/>
 	</dict>
 	<key>BeardedSpiceActiveTabShortcut</key>
