@@ -68,18 +68,11 @@
 		6537DAAB1AF508DF002F2391 /* MediaControllerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6537DAAA1AF508DF002F2391 /* MediaControllerObject.m */; };
 		6537DAAD1AF6E666002F2391 /* SpotifyTabAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C511691AED66A700EBA6A5 /* SpotifyTabAdapter.m */; };
 		653BCAD21AB25DAC0034D27F /* ShortcutsPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653BCAD01AB25DAC0034D27F /* ShortcutsPreferencesViewController.m */; };
-<<<<<<< HEAD
-		6564BDAD1B74B81E007030D8 /* DDHidLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564BDAC1B74B81E007030D8 /* DDHidLib.framework */; };
-		6564BDAE1B74BF9C007030D8 /* DDHidLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6564BDAC1B74B81E007030D8 /* DDHidLib.framework */; };
-		6564BDAF1B74BF9C007030D8 /* DDHidLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6564BDAC1B74B81E007030D8 /* DDHidLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-=======
 		656493A41C85048100A10C9B /* EHSystemUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 656493A31C85048100A10C9B /* EHSystemUtils.m */; };
 		656493A71C8504D200A10C9B /* NSException+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 656493A61C8504D200A10C9B /* NSException+Utils.m */; };
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
 		657EAEA91AAAEB9300D00456 /* runningSBApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 657EAEA81AAAEB9300D00456 /* runningSBApplication.m */; };
 		6588CF461B3584A700A3CBAD /* VOXTabAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6588CF451B3584A700A3CBAD /* VOXTabAdapter.m */; };
 		658B6A281AA66CCD00753DD9 /* TidalHiFiStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 658B6A271AA66CCD00753DD9 /* TidalHiFiStrategy.m */; };
-		65AE08221B8E6EA100F15BE0 /* BSHidAppleRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AE08211B8E6EA100F15BE0 /* BSHidAppleRemote.m */; };
 		65B32B8E1AD99D1600F696B9 /* TabAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B32B8D1AD99D1600F696B9 /* TabAdapter.m */; };
 		65C511721AED802B00EBA6A5 /* NativeAppTabAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C511711AED802B00EBA6A5 /* NativeAppTabAdapter.m */; };
 		65CB58C01C6E3DE900BE37A9 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CB58BD1C6E3DE900BE37A9 /* NSString+Utils.m */; };
@@ -121,7 +114,7 @@
 		BE0EC59E41539EF7C9368E11 /* YandexRadioStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0EC7F56FEF36DE52081CE1 /* YandexRadioStrategy.m */; };
 		BE36E0661A6797B300713BA7 /* FocusAtWillStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE36E0651A6797B300713BA7 /* FocusAtWillStrategy.m */; };
 		BF8512B61B84CF82005421A1 /* TvArsiviStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8512B51B84CF82005421A1 /* TvArsiviStrategy.m */; };
-		BFCB43BC1BD2568C0046006B /* MediaKey.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCB43BB1BD2568C0046006B /* MediaKey.m */; settings = {ASSET_TAGS = (); }; };
+		BFCB43BC1BD2568C0046006B /* MediaKey.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCB43BB1BD2568C0046006B /* MediaKey.m */; };
 		C31C94181AFB5500003F89AC /* NoonPacificStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = C31C94171AFB5500003F89AC /* NoonPacificStrategy.m */; };
 		CA5CCF421887FC0700F7C1C3 /* SynologyStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5CCF411887FC0700F7C1C3 /* SynologyStrategy.m */; };
 		D00408331C1E2E31006A89D0 /* BBCRadioStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = D00408321C1E2E31006A89D0 /* BBCRadioStrategy.m */; };
@@ -153,7 +146,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6564BDAF1B74BF9C007030D8 /* DDHidLib.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,14 +269,10 @@
 		6537DAAA1AF508DF002F2391 /* MediaControllerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaControllerObject.m; sourceTree = "<group>"; };
 		653BCACF1AB25DAC0034D27F /* ShortcutsPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShortcutsPreferencesViewController.h; sourceTree = "<group>"; };
 		653BCAD01AB25DAC0034D27F /* ShortcutsPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShortcutsPreferencesViewController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		6564BDAC1B74B81E007030D8 /* DDHidLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DDHidLib.framework; sourceTree = "<group>"; };
-=======
 		656493A21C85048100A10C9B /* EHSystemUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHSystemUtils.h; sourceTree = "<group>"; };
 		656493A31C85048100A10C9B /* EHSystemUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHSystemUtils.m; sourceTree = "<group>"; };
 		656493A51C8504D200A10C9B /* NSException+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException+Utils.h"; sourceTree = "<group>"; };
 		656493A61C8504D200A10C9B /* NSException+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException+Utils.m"; sourceTree = "<group>"; };
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
 		657EAEA71AAAEB9300D00456 /* runningSBApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = runningSBApplication.h; sourceTree = "<group>"; };
 		657EAEA81AAAEB9300D00456 /* runningSBApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = runningSBApplication.m; sourceTree = "<group>"; };
 		65837A521AAE5DE2004CD62F /* mediaResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mediaResources; sourceTree = "<group>"; };
@@ -293,8 +281,6 @@
 		6588CF471B358A8300A3CBAD /* VOX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VOX.h; sourceTree = "<group>"; };
 		658B6A261AA66CCD00753DD9 /* TidalHiFiStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TidalHiFiStrategy.h; sourceTree = "<group>"; };
 		658B6A271AA66CCD00753DD9 /* TidalHiFiStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TidalHiFiStrategy.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		65AE08201B8E6EA100F15BE0 /* BSHidAppleRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHidAppleRemote.h; sourceTree = "<group>"; };
-		65AE08211B8E6EA100F15BE0 /* BSHidAppleRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHidAppleRemote.m; sourceTree = "<group>"; };
 		65B32B8C1AD99D1600F696B9 /* TabAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabAdapter.h; sourceTree = "<group>"; };
 		65B32B8D1AD99D1600F696B9 /* TabAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabAdapter.m; sourceTree = "<group>"; };
 		65C511691AED66A700EBA6A5 /* SpotifyTabAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotifyTabAdapter.m; sourceTree = "<group>"; };
@@ -413,10 +399,8 @@
 			files = (
 				65E567081B76104300AD2D46 /* CoreAudio.framework in Frameworks */,
 				03F33ECC1855306A00E8F77E /* Carbon.framework in Frameworks */,
-				6564BDAD1B74B81E007030D8 /* DDHidLib.framework in Frameworks */,
 				9679336518551BCC00A49AC7 /* ScriptingBridge.framework in Frameworks */,
 				967933301855173100A49AC7 /* Cocoa.framework in Frameworks */,
-				6564BDAE1B74BF9C007030D8 /* DDHidLib.framework in Frameworks */,
 				23AAA028533E406E8D5AFF02 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,7 +688,6 @@
 			isa = PBXGroup;
 			children = (
 				65E567071B76104300AD2D46 /* CoreAudio.framework */,
-				6564BDAC1B74B81E007030D8 /* DDHidLib.framework */,
 				03F33ECB1855306A00E8F77E /* Carbon.framework */,
 				9679336418551BCC00A49AC7 /* ScriptingBridge.framework */,
 				9679332F1855173100A49AC7 /* Cocoa.framework */,
@@ -753,8 +736,6 @@
 				65E567051B75FD6E00AD2D46 /* BSHeadphoneUnplugListener.m */,
 				967933471855173100A49AC7 /* Images.xcassets */,
 				967933361855173100A49AC7 /* Supporting Files */,
-				65AE08201B8E6EA100F15BE0 /* BSHidAppleRemote.h */,
-				65AE08211B8E6EA100F15BE0 /* BSHidAppleRemote.m */
 			);
 			path = BeardedSpice;
 			sourceTree = "<group>";
@@ -978,7 +959,6 @@
 				65CB58C01C6E3DE900BE37A9 /* NSString+Utils.m in Sources */,
 				039D83421892173600DB426D /* SlackerStrategy.m in Sources */,
 				9679333C1855173100A49AC7 /* main.m in Sources */,
-				65AE08221B8E6EA100F15BE0 /* BSHidAppleRemote.m in Sources */,
 				03A34935185EE97B00C4A62B /* HypeMachineStrategy.m in Sources */,
 				508196B21AE8F58B007B5493 /* KollektFmStrategy.m in Sources */,
 				F634B5D71BF073150098BC59 /* JangoMediaStrategy.m in Sources */,
@@ -1036,7 +1016,6 @@
 				969E45721863E5830037226B /* LastFmStrategy.m in Sources */,
 				6537DAA81AF396DA002F2391 /* NativeAppTabRegistry.m in Sources */,
 				BF8512B61B84CF82005421A1 /* TvArsiviStrategy.m in Sources */,
-				651967C61AB3A67B00B48D3A /* NSString+Utils.m in Sources */,
 				65163CAE1BE60D9C000A3575 /* DDHidUsage.m in Sources */,
 				03A34925185EB20E00C4A62B /* YouTubeStrategy.m in Sources */,
 				D2222A7A1A180E6900910CFE /* TwentyTwoTracksStrategy.m in Sources */,

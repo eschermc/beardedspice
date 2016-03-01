@@ -25,7 +25,6 @@
 #import "runningSBApplication.h"
 
 #import "MediaKey.h"
-#import "BSHidAppleRemote.h"
 #import "DDHidAppleRemote.h"
 #import "DDHidAppleMikey.h"
 
@@ -178,7 +177,7 @@ BOOL accessibilityApiEnabled = NO;
     }];
     //Init Apple remote listener
     [self setupAppleRemotes];
-    
+
     //checking that rcd is enabled and disabling it
     remoteControlDemonEnabled = NO;
     NSString *cliOutput = NULL;
@@ -188,7 +187,7 @@ BOOL accessibilityApiEnabled = NO;
             remoteControlDemonEnabled = ([EHSystemUtils cliUtil:@"/bin/launchctl" arguments:@[@"unload", @"/System/Library/LaunchAgents/com.apple.rcd.plist"] output:nil] == 0);
         }
     }
-    
+
 }
 
 - (void)awakeFromNib
@@ -201,13 +200,9 @@ BOOL accessibilityApiEnabled = NO;
 
     // Get initial count of menu items
     statusMenuCount = statusMenu.itemArray.count;
-<<<<<<< HEAD
 
-=======
-    
     [self resetStatusMenu];
-    
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
+
     _hpuListener =
     [[BSHeadphoneUnplugListener alloc] initWithDelegate:self];
 }
@@ -215,7 +210,7 @@ BOOL accessibilityApiEnabled = NO;
 - (void)applicationWillTerminate:(NSNotification *)notification{
 
     if (remoteControlDemonEnabled) {
-        
+
         [EHSystemUtils cliUtil:@"/bin/launchctl" arguments:@[@"load", @"/System/Library/LaunchAgents/com.apple.rcd.plist"] output:nil];
     }
 }
@@ -225,12 +220,12 @@ BOOL accessibilityApiEnabled = NO;
 /////////////////////////////////////////////////////////////////////////
 
 - (void)menuNeedsUpdate:(NSMenu *)menu{
-    
+
     dispatch_async(workingQueue, ^{
-        
+
         [self autoSelectedTabs];
         dispatch_sync(dispatch_get_main_queue(), ^{
-            
+
             [self setStatusMenuItemsStatus];
         });
     });
@@ -382,12 +377,12 @@ BOOL accessibilityApiEnabled = NO;
 
 - (void)updateActiveTabFromMenuItem:(id) sender
 {
-    
+
     dispatch_async(workingQueue, ^{
-        
+
         [self updateActiveTab:[sender representedObject]];
         dispatch_sync(dispatch_get_main_queue(), ^{
-            
+
             [self setStatusMenuItemsStatus];
         });
     });
@@ -457,21 +452,9 @@ BOOL accessibilityApiEnabled = NO;
                            toAction:^{
 
                                dispatch_async(workingQueue, ^{
-<<<<<<< HEAD
 
-                                   BSTimeout *timeout = [BSTimeout timeoutWithInterval:COMMAND_EXEC_TIMEOUT];
-
-                                   [self refreshApplications:timeout];
-
-                                   if (![timeout reached]) {
-
-                                       [self setActiveTabShortcut];
-                                   }
-=======
-                                   
                                    [self refreshTabs:self];
                                    [self setActiveTabShortcut];
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
                                });
                            }];
 }
@@ -774,12 +757,6 @@ BOOL accessibilityApiEnabled = NO;
     @catch (NSException *exception) {
         NSLog(@"Error of the obtaining Apple Mic divices: %@", [exception description]);
     }
-    mikeys = [DDHidAppleMikey allMikeys];
-    // we want to be the delegate of the mikeys
-    [mikeys makeObjectsPerformSelector:@selector(setDelegate:) withObject:self];
-    // start listening to all mikey events
-    [mikeys makeObjectsPerformSelector:@selector(setListenInExclusiveMode:) withObject:(id)kCFBooleanTrue];
-    [mikeys makeObjectsPerformSelector:@selector(startListening) withObject:nil];
 }
 
 
@@ -813,41 +790,35 @@ BOOL accessibilityApiEnabled = NO;
     else
         [runningSBChromeApplications removeAllObjects];
     runningSBApplication *app = [self getRunningSBApplicationWithIdentifier:APPID_CHROME];
+    if (timeout.reached) {
+        return;
+    }
     if (app)
         [runningSBChromeApplications addObject:app];
     app = [self getRunningSBApplicationWithIdentifier:APPID_CANARY];
+    if (timeout.reached) {
+        return;
+    }
     if (app)
         [runningSBChromeApplications addObject:app];
     app = [self getRunningSBApplicationWithIdentifier:APPID_YANDEX];
+    if (timeout.reached) {
+        return;
+    }
     if (app)
         [runningSBChromeApplications addObject:app];
     app = [self getRunningSBApplicationWithIdentifier:APPID_OPERA];
+    if (timeout.reached) {
+        return;
+    }
     if (app)
         [runningSBChromeApplications addObject:app];
     app = [self getRunningSBApplicationWithIdentifier:APPID_CHROMIUM];
+    if (timeout.reached) {
+        return;
+    }
     if (app)
         [runningSBChromeApplications addObject:app];
-
-    chromeApp = [self getRunningSBApplicationWithIdentifier:APPID_CHROME];
-    if (timeout.reached) {
-        return;
-    }
-
-    canaryApp = [self getRunningSBApplicationWithIdentifier:APPID_CANARY];
-    if (timeout.reached) {
-        return;
-    }
-
-    yandexBrowserApp =
-        [self getRunningSBApplicationWithIdentifier:APPID_YANDEX];
-    if (timeout.reached) {
-        return;
-    }
-
-    chromiumApp = [self getRunningSBApplicationWithIdentifier:APPID_CHROMIUM];
-    if (timeout.reached) {
-        return;
-    }
 
     safariApp = [self getRunningSBApplicationWithIdentifier:APPID_SAFARI];
     if (timeout.reached) {
@@ -918,18 +889,9 @@ BOOL accessibilityApiEnabled = NO;
 
 - (void)removeAllItems
 {
-<<<<<<< HEAD
-    NSInteger count = statusMenu.itemArray.count;
-    for (int i = 0; i < (count - statusMenuCount); i++) {
-        [statusMenu removeItemAtIndex:0];
-    }
-    [SafariTabKeys removeAllObjects];
-
-=======
     SafariTabKeys = [NSMutableSet set];
-    
+
     menuItems = [NSMutableArray array];
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
     // reset playingTabs
     playingTabs = [NSMutableArray array];
 
@@ -948,7 +910,7 @@ BOOL accessibilityApiEnabled = NO;
                 [item setState:NSOnState];
             }
             else{
-                
+
                 [item setState:NSOffState];
             }
         }
@@ -1020,9 +982,9 @@ BOOL accessibilityApiEnabled = NO;
             NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:[self trim:tab.title toLength:40] action:@selector(updateActiveTabFromMenuItem:) keyEquivalent:@""];
 
             if (menuItem) {
-                
+
                 [menuItems addObject:menuItem];
-                
+
                 [menuItem setRepresentedObject:tab];
 
                 // check playing status
@@ -1066,25 +1028,14 @@ BOOL accessibilityApiEnabled = NO;
 
     [mediaStrategyRegistry endStrategyQueries];
 
-<<<<<<< HEAD
-
-    if ([statusMenu numberOfItems] == statusMenuCount) {
-        NSMenuItem *item = [statusMenu insertItemWithTitle:@"No applicable tabs open :(" action:nil keyEquivalent:@"" atIndex:0];
-        [item setEnabled:NO];
-//        [keyTap stopWatchingMediaKeys];
-    } else {
-//        [keyTap startWatchingMediaKeys];
-    }
-
-=======
     dispatch_sync(dispatch_get_main_queue(), ^{
-        
+
         [self resetStatusMenu];
-        
+
         if (menuItems.count) {
-            
+
             for (NSMenuItem *item in menuItems) {
-                
+
                 [statusMenu insertItem:item atIndex:0];
             }
             //        [keyTap startWatchingMediaKeys];
@@ -1093,8 +1044,7 @@ BOOL accessibilityApiEnabled = NO;
             //        [keyTap stopWatchingMediaKeys];
         }
     });
-    
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
+
     //check activeTab
     if (_activeTab == activeTab) {
         activeTab = nil;
@@ -1123,34 +1073,17 @@ BOOL accessibilityApiEnabled = NO;
             //key was not assigned, we think this is fake pinned tab.
             return;
         }
-<<<<<<< HEAD
 
-        if (!SafariTabKeys) {
-            SafariTabKeys = [NSMutableSet set];
-        }
-        if (key) {
-            if ([SafariTabKeys containsObject:key]) {
-
-                return;
-            }
-            [SafariTabKeys addObject:key];
-        }
-        //-------------------------------------------
-
-        [self addStatusMenuItemFor:tab];
-=======
-        
         if ([SafariTabKeys containsObject:key]) {
-            
+
             return;
         }
         //-------------------------------------------
-        
+
         if ([self addStatusMenuItemFor:tab]) {
-            
+
             [SafariTabKeys addObject:key];
         }
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
     }
 }
 
@@ -1158,18 +1091,13 @@ BOOL accessibilityApiEnabled = NO;
 
     MediaStrategy *strategy = [mediaStrategyRegistry getMediaStrategyForTab:tab];
     if (strategy) {
-<<<<<<< HEAD
 
-        NSMenuItem *menuItem = [statusMenu insertItemWithTitle:[self trim:tab.title toLength:40] action:@selector(updateActiveTabFromMenuItem:) keyEquivalent:@"" atIndex:0];
-=======
-        
         NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:[self trim:tab.title toLength:40] action:@selector(updateActiveTabFromMenuItem:) keyEquivalent:@""];
-        
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
+
         if (menuItem){
 
             [menuItems addObject:menuItem];
-            
+
             [menuItem setRepresentedObject:tab];
 
             // check playing status
@@ -1193,30 +1121,22 @@ BOOL accessibilityApiEnabled = NO;
     // Prevent switch to tab, which not have strategy.
     MediaStrategy *strategy;
     if (![tab isKindOfClass:[NativeAppTabAdapter class]]) {
-<<<<<<< HEAD
 
-=======
-        
 #ifdef DEBUG
         NSLog(@"(AppDelegate - updateActiveTab) tab %@ check strategy", tab);
 #endif
         mediaStrategyRegistry.breakpoint = YES;
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
         strategy = [mediaStrategyRegistry getMediaStrategyForTab:tab];
         mediaStrategyRegistry.breakpoint = NO;
         if (!strategy) {
             return;
         }
     }
-<<<<<<< HEAD
 
-=======
-    
 #ifdef DEBUG
     NSLog(@"(AppDelegate - updateActiveTab) tab %@ has strategy", tab);
 #endif
-    
->>>>>>> 0fd8570152d76960f2167158f99f7334183b67ff
+
     if (![tab isEqual:activeTab]) {
 #ifdef DEBUG
         NSLog(@"(AppDelegate - updateActiveTab) tab %@ is different from %@", tab, activeTab);
@@ -1622,7 +1542,7 @@ BOOL accessibilityApiEnabled = NO;
     for (int i = 0; i < (count - statusMenuCount); i++) {
         [statusMenu removeItemAtIndex:0];
     }
-    
+
     if (!menuItems.count) {
         NSMenuItem *item = [statusMenu insertItemWithTitle:@"No applicable tabs open" action:nil keyEquivalent:@"" atIndex:0];
         [item setEnabled:NO];
