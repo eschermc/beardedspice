@@ -37,12 +37,12 @@
 
 -(NSString *) previous
 {
-    return @"(function(){ document.querySelector('#movie_player .ytp-prev-button').click(); })()";
+    return @"(function(){ document.querySelector('#movie_player').seekBy(-15); })()";
 }
 
 -(NSString *) next
 {
-    return @"(function(){ document.querySelector('#movie_player .ytp-next-button').click(); })()";
+    return @"(function(){ document.querySelector('#movie_player').seekBy(15); })()";
 }
 
 -(NSString *) pause
